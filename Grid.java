@@ -58,20 +58,21 @@ public int blobCount()
 private void setVisit(int i, int j)
   {
     visitedGrid[i][j] = true;
-    try
-    {
+
         for(int k = i-1; k <= i+1; k++){
           for(int l = j-1; l <= j+1; l++)
           {
-              if(grid[k][l] && !visitedGrid[k][l])
+            try{
+              if(grid[k][l] && !visitedGrid[k][l]){
+                System.out.println("found an adjacent x at "+k+" and " + l);
                 setVisit(k, l);
+              }
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+              continue;
+            }
           }
         }
-
-    }
-    catch (ArrayIndexOutOfBoundsException e) {
-
-    }
   }
 
 
