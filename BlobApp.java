@@ -23,22 +23,23 @@ public class BlobApp
 	    }
 	  return grid;
   }
-  
+
   public static void main(String[] args)
   {
 
     final int GRIDR = 5;   // number of grid rows
     final int GRIDC = 10;   // number of grid columns
-    int percentage = 30;       
+    int percentage = 30;
 
     boolean[][] g = genGrid(GRIDR, GRIDC, percentage);
-    
-    
+
+
     System.out.println();
 
     // create grid
     Grid grid = new Grid(GRIDR, GRIDC, g);
-    
+
+
     // display grid and blob count
     System.out.println(grid);
     System.out.println("\nThere are " + grid.blobCount() + " blobs.\n");
